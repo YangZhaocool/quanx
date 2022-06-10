@@ -7,6 +7,7 @@
  * host, rsshub.app, proxy
  * 2. Loon & Surge
  * domain, rsshub.app, proxy
+ * 去除获取描述的接口。
  */
 const $ = API("epic");
 checkUpdate().then(() => $done());
