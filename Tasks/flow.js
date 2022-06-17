@@ -23,6 +23,8 @@ Promise.all(subscriptions.map(async sub => await fetchInfo(sub)))
     .finally(() => $.done());
 
 async function fetchInfo(sub) {
+    const method = `GET`;
+    const body = ``;
     const headers = {
         'User-Agent': `Quantumult X/1.0.29 (iPhone11,6; iOS 15.4.1)`,
         'Host': `bigairport.icu`,
@@ -31,6 +33,19 @@ async function fetchInfo(sub) {
         'Accept-Encoding': `gzip, deflate, br`,
         'Accept': `*/*`
     };
+    const myRequest = {
+        url: url,
+        method: method,
+        headers: headers,
+        body: body
+    };
+    $task.fetch(myRequest).then(response => {
+        console.log(response.statusCode + "\n\n" + response.body);
+        $done();
+    }, reason => {
+        console.log(reason.error);
+        $done();
+    });
     $.http.get({
         url: sub.link,
         headers
