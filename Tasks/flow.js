@@ -26,11 +26,9 @@ async function fetchInfo(sub) {
     const headers = {
         'User-Agent': `Quantumult X/1.0.29 (iPhone11,6; iOS 15.4.1)`,
         'Host': `bigairport.icu`,
-        'Connection': `keep-alive`,
-        'Accept-Language': `zh-CN,zh-Hans;q=0.9`,
-        'Accept-Encoding': `gzip, deflate, br`,
-        'Accept': `*/*`
     };
+
+    console.log(`111111111==========>${sub.link}`);
     $.http.get({
         url: sub.link,
         headers
