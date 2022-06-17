@@ -39,7 +39,7 @@ async function fetchInfo(sub) {
         headers: headers,
         body: body
     };
-    $task.fetch(myRequest).then(response => {
+    $.task.fetch(myRequest).then(response => {
         console.log(response.statusCode + "\n\n" + response.body);
         $done();
     }, reason => {
