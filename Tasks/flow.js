@@ -24,7 +24,7 @@ Promise.all(subscriptions.map(async sub => await fetchInfo(sub)))
 
 async function fetchInfo(sub) {
     const headers = {
-        'User-Agent': `Quantumult%20X/1.0.29 (iPhone11,6; iOS 15.4.1)`,
+        'User-Agent': `Quantumult X/1.0.29 (iPhone11,6; iOS 15.4.1)`,
         'Host': `bigairport.icu`,
         'Connection': `keep-alive`,
         'Accept-Language': `zh-CN,zh-Hans;q=0.9`,
