@@ -2,7 +2,7 @@
  * @Author: YangZhaocool 875145546@qq.com
  * @Date: 2022-06-20 13:30:42
  * @LastEditors: e 875145546@qq.com
- * @LastEditTime: 2022-06-20 14:18:12
+ * @LastEditTime: 2022-06-20 14:29:28
  * @Description: 
  *  苹果资源站自用签到
  * 
@@ -11,8 +11,23 @@
 const $ = API("iosApp");
 //获取boxjs中的cookies
 const cookies = `${$.read("cookies")}`
-console.log(`11111111111=========>${cookies}`);
+const headers = {
+  cookie: cookies
+}
+const data = {
+  action: 'user_qiandao',
+  nonce: '8a0884beea'
+}
+$.http.get({
+  url: sub.link,
+  headers,
+  data
+}).then(resp => {
 
+  console.log(`${resp}`);
+
+  console.log(`${resp.msg}`);
+});
 // prettier-ignore
 /*********************************** API *************************************/
 function ENV() {
