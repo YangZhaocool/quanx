@@ -19,7 +19,7 @@ const data = {
   nonce: '8a0884beea'
 }
 $.http.post({
-  url: sub.link,
+  url: "https://app.onetuyun.top/wp-admin/admin-ajax.php",
   headers,
   data
 }).then(resp => {
