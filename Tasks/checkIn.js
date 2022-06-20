@@ -2,7 +2,7 @@
  * @Author: YangZhaocool 875145546@qq.com
  * @Date: 2022-06-20 13:30:42
  * @LastEditors: e 875145546@qq.com
- * @LastEditTime: 2022-06-20 14:29:28
+ * @LastEditTime: 2022-06-20 14:39:02
  * @Description: 
  *  苹果资源站自用签到
  * 
@@ -18,7 +18,7 @@ const data = {
   action: 'user_qiandao',
   nonce: '8a0884beea'
 }
-$.http.get({
+$.http.post({
   url: sub.link,
   headers,
   data
