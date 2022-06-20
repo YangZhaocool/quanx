@@ -19,9 +19,9 @@
         }
       ],
       "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/COVID-19.png"
+        "https://app.onetuyun.top/wp-content/uploads/2022/05/%E5%85%AC%E4%BC%97%E5%8F%B7%E9%A6%96%E5%9B%BE-4.png"
       ],
-      "script": "https://raw.githubusercontent.com/YangZhaocool/QuanX-1/master/Tasks/checkIn.js"
+      "script": "https://raw.githubusercontent.com/YangZhaocool/quanx/master/Tasks/checkIn.js"
     }
   ]
 }
