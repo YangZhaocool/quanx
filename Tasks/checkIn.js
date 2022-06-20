@@ -2,7 +2,7 @@
  * @Author: YangZhaocool 875145546@qq.com
  * @Date: 2022-06-20 13:30:42
  * @LastEditors: e 875145546@qq.com
- * @LastEditTime: 2022-06-20 14:53:24
+ * @LastEditTime: 2022-06-20 16:35:15
  * @Description: 
  *  苹果资源站自用签到
  * 
@@ -21,7 +21,8 @@ const data = {
 $.http.post({
   url: "https://app.onetuyun.top/wp-admin/admin-ajax.php",
   headers,
-  data: data
+  action: 'user_qiandao',
+  nonce: '8a0884beea'
 }).then(res => {
   res = JSON.stringify(res)
   console.log(`${res}`);
