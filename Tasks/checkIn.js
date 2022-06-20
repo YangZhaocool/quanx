@@ -2,7 +2,7 @@
  * @Author: YangZhaocool 875145546@qq.com
  * @Date: 2022-06-20 13:30:42
  * @LastEditors: e 875145546@qq.com
- * @LastEditTime: 2022-06-20 14:46:45
+ * @LastEditTime: 2022-06-20 14:53:24
  * @Description: 
  *  苹果资源站自用签到
  * 
@@ -22,10 +22,10 @@ $.http.post({
   url: "https://app.onetuyun.top/wp-admin/admin-ajax.php",
   headers,
   data
-}).then(resp => {
-  resp = JSON.stringify(resp)
-  console.log(`${resp}`);
-  console.log(`${resp.msg}`);
+}).then(res => {
+  res = JSON.stringify(res)
+  console.log(`${res}`);
+  console.log(`${res.msg}`);
 }).then(() => $.done());;
 // prettier-ignore
 /*********************************** API *************************************/
