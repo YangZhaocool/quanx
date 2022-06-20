@@ -1,0 +1,27 @@
+{
+  "id": "yangzhaocool.app.sub",
+  "name": "YangZhaocool 应用订阅",
+  "author": "@YangZhaocool",
+  "icon": "https://avatars2.githubusercontent.com/u/21050064?s=460&u=40a74913dd0a3d00670d05148c3a08c787470021&v=4",
+  "repo": "https://github.com/YangZhaocool/quanx",
+  "apps":[
+    {
+      "id": "iosApp",
+      "name": "苹果资源站自用签到",
+      "author": "@YangZhaoCool",
+      "repo": "https://github.com/YangZhaocool/quanx",
+      "keys": [
+        "@iosApp.cookies"
+      ],
+      "settings": [
+        {
+          "id": "@iosApp.cookies"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/COVID-19.png"
+      ],
+      "script": "https://raw.githubusercontent.com/YangZhaocool/QuanX-1/master/Tasks/checkIn.js"
+    }
+  ]
+}
