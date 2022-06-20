@@ -21,7 +21,7 @@ const data = {
 $.http.post({
   url: "https://app.onetuyun.top/wp-admin/admin-ajax.php",
   headers,
-  data
+  data: data
 }).then(res => {
   res = JSON.stringify(res)
   console.log(`${res}`);
