@@ -2,34 +2,54 @@
  * @Author: YangZhaocool 875145546@qq.com
  * @Date: 2022-06-20 13:30:42
  * @LastEditors: e 875145546@qq.com
- * @LastEditTime: 2022-06-22 09:39:46
+ * @LastEditTime: 2022-06-24 12:07:06
  * @Description: 
- *  苹果资源站自用签到
- * 
+ *    应该适用于所有基于RiPro主题开发的资源站的签到
+ *    找boxjs中填写网站域名以及的账号和密码
  */
 //赋值变量
 const $ = API("iosApp");
-//获取boxjs中的cookies
+//获取boxjs中的数据
+const URL = `${$.read("url")}`;
+const USERNAME = `${$.read("username")}`;
+const PASSWORD = `${$.read("password")}`
 const headers = {
-  cookie: `${$.read("cookies")}`
+  //cookie: `${$.read("cookies")}`
+  'User-Agent': `Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1`,
 }
+const body = `action=user_login&username=${USERNAME}+&password=${PASSWORD}`;
 //请求地址
-const url = `https://app.oneyuntu.top/wp-admin/admin-ajax.php?action=user_qiandao`
+const url = `${URL}wp-admin/admin-ajax.php`
 $.http.post({
   url,
   headers,
-}).then(data => {
-  const res = data.body.status
-  if (res == '1') {
-    console.log(`签到成功`);
-    $.notify(`😝 签到成功`)
-
-  } else {
-    console.log(`今天已经签到过`);
-    $.notify(`❎今天已经签到过`)
+  body
+}).then(response => {
+  var res = JSON.stringify(response.headers['Set-Cookie'])
+  if (response.statusCode == '200') {
+    console.log(`😝 登陆成功`)
   }
+  $.http.post({
+    url: `${URL}wp-admin/admin-ajax.php?action=user_qiandao`,
+    headers,
+    cookie: res
+  }).then(data => {
+    var status = JSON.parse(data.body).status
+    console.log(`状态码=======>  ${status}`);
+    if (status == '1') {
+      console.log(` 😝 签到成功`);
+      $.notify(`😝 签到成功`)
 
-}).then(() => $.done());;
+    } else {
+      console.log(`❎ 今天已经签到过`);
+      $.notify(`❎今天已经签到过`)
+    }
+
+  }).finally(() => {
+    $.done()
+  });
+
+})
 // prettier-ignore
 /*********************************** API *************************************/
 function ENV() {
