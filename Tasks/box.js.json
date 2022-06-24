@@ -4,22 +4,39 @@
   "author": "@YangZhaocool",
   "icon": "https://avatars.githubusercontent.com/u/31984495",
   "repo": "https://github.com/YangZhaocool/quanx",
-  "apps":[
+  "apps": [
     {
       "id": "iosApp",
       "name": "苹果资源站自用签到",
       "author": "@YangZhaoCool",
       "repo": "https://github.com/YangZhaocool/quanx",
       "keys": [
-        "@iosApp.cookies"
+        "@iosApp.url",
+        "@iosApp.username",
+        "@iosApp.password"
       ],
       "settings": [
         {
-          "id": "@iosApp.cookies"
+          "id": "@iosApp.url",
+          "name": "输入网址",
+          "rows": 2,
+          "desc": "输入网址"
+        },
+        {
+          "id": "@iosApp.username",
+          "name": "输入账号",
+          "rows": 2,
+          "desc": "输入账号"
+        },
+        {
+          "id": "@iosApp.password",
+          "name": "输入密码",
+          "rows": 2,
+          "desc": "输入密码"
         }
       ],
       "icons": [
-        "https://app.onetuyun.top/wp-content/uploads/2022/05/%E5%85%AC%E4%BC%97%E5%8F%B7%E9%A6%96%E5%9B%BE-4.png"
+        "https://avatars.githubusercontent.com/u/31984495"
       ],
       "script": "https://raw.githubusercontent.com/YangZhaocool/quanx/master/Tasks/checkIn.js"
     }
